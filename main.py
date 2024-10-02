@@ -180,7 +180,7 @@ class DNSOverTLSServer:
 
 if __name__ == "__main__":
     server = DNSOverTLSServer(
-        cert_file="./tls/fullchain1.pem",
-        key_file="./tls/privkey1.pem"
+        cert_file=os.environ["TLS_CERT"],
+        key_file=os.environ["TLS_KEY"]
     )
     server.run()

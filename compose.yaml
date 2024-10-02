@@ -1,0 +1,9 @@
+services:
+  dns-over-tls:
+    build: .
+    network_mode: host
+    volumes:
+      - ./logs/:/app/logs/
+      - ./block_list.txt:/app/block_list.txt
+    env_file:
+      - .env
